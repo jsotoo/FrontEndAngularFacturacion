@@ -1,0 +1,33 @@
+<div class="form-group-row">
+    <label class="col-sm-2 col-form-label"> Nombre Producto</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Nombre"
+        placeholder= "Ingresa el nombre del producto">
+
+    </div>
+    <label class="col-sm-2 col-form-label"> Precio del Producto</label>
+    <div class="col-sm-10">
+            <input type="number" class="form-control" [(ngModel)]="Precio"
+            placeholder= "Ingresa el precio del producto">
+    
+    </div>
+    <label class="col-sm-2 col-form-label"> Stock del Producto</label>
+    <div class="col-sm-10">
+            <input type="number" class="form-control" [(ngModel)]="Stock"
+            placeholder= "Ingresa el stock del producto">
+    
+        </div>
+
+
+</div>
+<br>
+<br>
+<button (click)="crearProducto()" *ngIf="producto.ProductoId == 0" class="btn btn-primary">
+    Crear
+</button>
+
+<button (click)="editarProducto()" *ngIf="producto.ProductoId != 0" class="btn btn-primary">
+        Editar
+    </button>
+
+

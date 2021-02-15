@@ -1,0 +1,35 @@
+<div class="form-group-row">
+    <label class="col-sm-2 col-form-label"> ID Venta </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="detalleVenta"
+        placeholder= "Ingresa los nombres">
+
+    </div>
+    <label class="col-sm-2 col-form-label"> ID Producto</label>
+    <div class="col-sm-10">
+            <input type="number" class="form-control" [(ngModel)]="ProductoId"
+            placeholder= "Ingresa los apellidos">
+    
+    </div>
+    <label class="col-sm-2 col-form-label"> Cantidad</label>
+    <div class="col-sm-10">
+            <input type="number" class="form-control" [(ngModel)]="Cantidad"
+            placeholder= "Ingresa la direccion">
+    
+        </div>
+
+        <label class="col-sm-2 col-form-label"> Precio </label>
+        <div class="col-sm-10">
+                <input type="number" class="form-control" [(ngModel)]="Precio"
+                placeholder= "Ingresa el telefono">
+        
+        </div>
+
+</div>
+<br>
+<br>
+<button (click)="crearDetalleVenta()" *ngIf="detalle.DetalleId == 0" class="btn btn-primary">
+    Crear
+</button>
+
+

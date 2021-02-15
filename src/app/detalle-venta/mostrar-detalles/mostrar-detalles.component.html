@@ -1,0 +1,63 @@
+<!-- Button trigger modal -->
+
+<button type="button" class="btn btn-primary float-right m-2" 
+ data-toggle="modal" data-target="#exampleModal" 
+ (click)= "addClick()" data-backdrop ="static" data-keyboard="false"
+>
+Crear Detalle Venta
+</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+              <button type="button" class="close" 
+              data-dismiss="modal" aria-label="Close"
+              (click)="closeClick()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+           <app-crear-editar-cliente [detalle] = "detalle" *ngIf="ActivateAddEditDepComp;">  
+              </app-crear-editar-cliente> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+
+
+
+<table class= "table table-striped">
+<thead>
+    <tr>
+        <th>ID Detalle</th>
+        <th>ID Venta</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor= "let detalle of DetalleVentaList">
+        <td>{{detalle.DetalleId}}</td>
+        <td>{{detalle.VentaId}}</td>
+        <td>{{detalle.Producto}}</td>
+        <td>{{detalle.Cantidad}}</td>
+        <td>{{detalle.Precio}}</td>
+       <td>
+        <button type="button" (click)= "deleteClick(detalle)" class="btn btn-light mr-1">
+            Eliminar
+        </button>
+
+        </td>
+    </tr>
+
+
+</tbody>
+
+</table>   

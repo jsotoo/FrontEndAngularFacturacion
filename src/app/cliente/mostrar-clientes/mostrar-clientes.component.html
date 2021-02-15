@@ -1,0 +1,71 @@
+<!-- Button trigger modal -->
+
+<button type="button" class="btn btn-primary float-right m-2" 
+ data-toggle="modal" data-target="#exampleModal" 
+ (click)= "addClick()" data-backdrop ="static" data-keyboard="false"
+>
+Crear Cliente
+</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+              <button type="button" class="close" 
+              data-dismiss="modal" aria-label="Close"
+              (click)="closeClick()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+           <app-crear-editar-cliente [cliente] = "cliente" *ngIf="ActivateAddEditDepComp;">  
+              </app-crear-editar-cliente> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+
+
+
+<table class= "table table-striped">
+<thead>
+    <tr>
+        <th>Cliente ID</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Email</th>
+   
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor= "let cliente of ClientesList">
+        <td>{{cliente.Id}}</td>
+        <td>{{cliente.Nombres}}</td>
+        <td>{{cliente.Apellidos}}</td>
+        <td>{{cliente.Direccion}}</td>
+        <td>{{cliente.Telefono}}</td>
+        <td>{{cliente.Email}}</td>
+       <td>
+         <button type="button" class="btn btn-success mr-1"
+         data-toggle="modal" data-target="#exampleModal" 
+         (click)= "editClick(cliente)" data-backdrop ="static" data-keyboard="false">
+            Editar
+         </button>
+        <button type="button" (click)= "deleteClick(cliente)" class="btn btn-danger mr-1">
+            Eliminar
+        </button>
+
+        </td>
+    </tr>
+
+
+</tbody>
+
+</table>   
